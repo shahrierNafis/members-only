@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .row.col-6
+    form(action=null method="post")
+      .form-floating.form-group
+        input.form-control(type="text" name="name" id="name" value= name ? name : null )
+        <label for="name" >Name</label>
+      .form-floating.form-group
+        input.form-control(type="email" name="email" id="email" value= email ? email : null )
+        <label for="email" >Email</label>
+      .form-group
+        .form-floating
+          input.form-control(type="password" name="password" id="password" value=password ? password : null)
+          <label for="password" >Password</label>
+        .form-floating 
+          input.form-control(type="password" name="confirmPassword" id="confirmPassword")
+          <label for="confirmPassword" >Confirm Password</label>
+      <button class="btn btn-primary m-2" type="submit">Sign up</button>
+    if (errors)
+      each error in errors
+        p.alert.alert-warning= error.msg
