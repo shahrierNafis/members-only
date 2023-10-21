@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
   },
   membershipStatus: {
     type: String,
-    enum: ["member", "admin", "nonMember"],
+    enum: ["member", "admin", "new"],
     required: true,
   },
 });

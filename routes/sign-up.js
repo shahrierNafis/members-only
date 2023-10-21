@@ -42,7 +42,7 @@ router.post("/", [
       name,
       password: await bcrypt.hashSync(password, 10),
       email,
-      membershipStatus: "nonMember",
+      membershipStatus: "new",
     });
     if (errors.isEmpty()) {
       // no error, save user

@@ -24,9 +24,10 @@ html(lang="en")
                             <li class="nav-item">
                                 <a class="nav-link" href="/sign-out">Sign out</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/member">join the club</a>
-                            </li>
+                            if (user.membershipStatus=="new")
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/join">join the club</a>
+                                </li>
                         else  
                             <li class="nav-item">
                                 <a class="nav-link" href="/sign-up">Sign up</a>
