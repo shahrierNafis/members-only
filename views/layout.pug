@@ -8,7 +8,7 @@ html(lang="en")
         link(rel="stylesheet" href="/stylesheets/style.css")
         script(deffer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous")
         script(src="/javascripts/main.js")
-    body
+    body.vh-100
         nav(class="navbar navbar-expand-lg navbar-light bg-light")
             .container-fluid
                 <a class="navbar-brand" href="#">Members only</a>
@@ -20,16 +20,20 @@ html(lang="en")
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/sign-up">Sign up</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/sign-in">Sign in</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/member">join the club</a>
-                        </li>
+                        if (user)
+                            <li class="nav-item">
+                                <a class="nav-link" href="/sign-out">Sign out</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/member">join the club</a>
+                            </li>
+                        else  
+                            <li class="nav-item">
+                                <a class="nav-link" href="/sign-up">Sign up</a>
+                            </li>   
+                            <li class="nav-item">
+                                <a class="nav-link" href="/sign-in">Sign in</a>
+                            </li>
                     </ul>
                 </div>
-        .d-flex.align-items-center.justify-content-center        
-            block content
+        block content

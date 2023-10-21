@@ -16,6 +16,13 @@ router.post("/", [
     .isLength({ min: 1 })
     .isEmail()
     .withMessage("Invalid email")
+    .custom(async (value, { req }) => {
+      const user = await User.findOne({ email: value });
+      if (user) {
+        return Promise.reject("Email already in use");
+      }
+      return true;
+    })
     .escape(),
   body("confirmPassword")
     .exists()
