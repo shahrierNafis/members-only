@@ -65,6 +65,7 @@ app.use("/sign-up", require("./routes/sign-up"));
 app.use("/sign-in", require("./routes/sign-in"));
 app.use("/sign-out", require("./routes/sign-out"));
 app.use("/join", require("./routes/join"));
+app.use("/create", require("./routes/create"));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

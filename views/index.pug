@@ -1,5 +1,9 @@
 extends layout
 block content
-  <h1>#{title}</h1>
-  <p>Welcome to #{title}</p>
+  if (user)
+    <p>Welcome #{user.name}</p>
+    a(href="/create") Create a new message
+  else
+    p Please sign to join the club
+
 

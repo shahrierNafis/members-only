@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    .d-flex.align-items-center.justify-content-center.h-100.flex-column
+        .row.col-6-lg
+            h1 New Message
+            form(action="" method="post")
+                .form-floating.form-group
+                    input.form-control(type="text" name="title" id="title" value= title ? title : null )
+                    <label for="title" >Title</label>
+                .form-floating
+                    textarea.form-control.h-100(name="message" rows="7" id="message" value= message ? message : null )
+                    <label for="message" >Message</label>
+                <button class="btn btn-primary m-2" type="submit">Submit</button>
+        if (errors)
+            each error in errors
+                p.alert.alert-warning= error.msg
