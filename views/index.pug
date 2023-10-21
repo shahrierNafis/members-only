@@ -1,9 +1,23 @@
 extends layout
 block content
+
   if (user)
     <p>Welcome #{user.name}</p>
-    a(href="/create") Create a new message
   else
-    p Please sign to join the club
+    p Please sign to create a message
+  a(href="/create") Create a new message
+  .d-flex.flex-wrap
+    each message in messages 
+      div.card(style="height: 45vh; flex: 0 0 32.5vw; overflow: auto;")
+        .card-header #{message.title}
+        .card-body
+          blockquote.blockquote.mb-0
+            p #{message.message}
+            if (user && user.membershipStatus == "member")
+              footer.blockquote-footer  #{message.author.name}
+      //-   p #{message.created_at}
+
+
+
 
 
