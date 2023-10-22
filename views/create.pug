@@ -9,7 +9,7 @@ block content
                     input.form-control(type="text" name="title" id="title" value= title ? title : null )
                     <label for="title" >Title</label>
                 .form-floating
-                    textarea.form-control.h-100(name="message" rows="7" id="message" value= message ? message : null )
+                    textarea.form-control.h-100(name="message" rows="7" id="message") #{message ? message : ""}
                     <label for="message" >Message</label>
                 <button class="btn btn-primary m-2" type="submit">Submit</button>
         if (errors)
