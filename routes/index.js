@@ -11,4 +11,12 @@ router.get(
   })
 );
 
+// delete message
+router.delete(
+  "/",
+  asyncHandler(async function (req, res, next) {
+    await Message.findByIdAndDelete(req.body.id);
+    next();
+  })
+);
 module.exports = router;
